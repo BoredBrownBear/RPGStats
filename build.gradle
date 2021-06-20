@@ -51,10 +51,6 @@ dependencies {
 	}
 	include "me.shedaniel.cloth:cloth-config-fabric:4.11.24"
 
-	// Harvest scythes
-	modImplementation 'com.github.LordDeatHunter:HarvestScythes:-SNAPSHOT'
-	// Harvest
-	modImplementation 'com.github.TehNut:Harvest:1.16_fabric-SNAPSHOT'
 }
 
 processResources {

@@ -18,6 +18,7 @@ public class RPGStatDisplayGUI extends LightweightGuiDescription {
     ArrayList<Identifier> data = new ArrayList<>();
     
     public RPGStatDisplayGUI() {
+        super();
         data.addAll(RPGStatsClient.currentStats.keySet());
         
         WGridPanel root = new WGridPanel();
@@ -25,7 +26,7 @@ public class RPGStatDisplayGUI extends LightweightGuiDescription {
         root.setSize(240, 180);
         
         WLabel guiTitle = new WLabel("  RPGStats");
-        root.add(guiTitle, 5, 0);
+        root.add(guiTitle, 5, 1);
     
         BiConsumer<Identifier, StatEntry> configurator = (Identifier identifier, StatEntry entry) -> {
             int level = RPGStatsClient.currentStats.get(identifier).getLeft();
@@ -42,7 +43,7 @@ public class RPGStatDisplayGUI extends LightweightGuiDescription {
     
         WListPanel<Identifier, StatEntry> list = new WListPanel<>(data, StatEntry::new, configurator);
         list.setListItemHeight(18);
-        root.add(list, 1, 1, 11, 8);
+        root.add(list, 1, 2, 11, 7);
         
         root.validate(this);
     }
